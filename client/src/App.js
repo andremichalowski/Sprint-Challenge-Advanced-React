@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
 import axios from 'axios';
-import Players from './components/Players';
+import Players from './Components/Players/Players';
+import DarkMode from './Components/useDarkMode';
 
-export default class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -25,16 +26,19 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
           <h1>
             Worlds Womens Cup
           </h1>
+          <DarkMode />
           <Players players={this.state.players} />
         </header>
       </div>
     );
   }
 }
+
+export default App;
